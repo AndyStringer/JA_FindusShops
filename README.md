@@ -7,7 +7,7 @@ They extend the template to include:
 	b) The business can be flagged as "Closed" on a temporary or permanant basis. This overrides any times enetered for each day.
 	c) Using dates provided by JEvent component, public holidays can be defined and each business can be show as open/closed on these days (default is closed).
 2) Food Menu Items (in Listing Fields)
-	a) added Menu Type as a multi-choice, drop-down to define the food type (e.g. Vega, Veggie, etc).
+	a) added Menu Type as a multi-choice, drop-down to define the food type (e.g. Vegan, Veggie, etc).
 	b) added Menu Price for the price of the dish
 	c) added icons to assist with Menu Type under media "images/icons".
 	
