@@ -1,4 +1,4 @@
-These files are for the JoomlaArt JA_FINDUS template.
+These files are for the JoomlaArt JA_FINDUS template.  They will not standalone.
 
 They extend the template to include:
 
