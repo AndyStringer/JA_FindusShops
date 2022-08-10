@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="attribs" addfieldpath="/templates/ja_findus/etc/fields">
+		<fieldset name="extra-fields" label="TPL_GROUP_EXTRA_FIELDS_LABEL" description="" group="extrafields">
+			<field name="type-article" type="hidden" default="view-listing" label="TPL_LISTING_INFO_LABEL" />
+
+			<field name="spacer" type="spacer" label="TPL_LISTING_INFO" class="text-label" />
+
+<!-- 			<field name="open-time" type="DateTime" label="TPL_TIME_OPEN" description="TPL_TIME_OPEN_DESC" size="40" filter="RAW" hint="10:00 AM"/>
+
+			<field name="close-time" type="DateTime" label="TPL_TIME_CLOSE" description="TPL_TIME_CLOSE_DESC" size="40" filter="RAW" hint="11:00 PM"/> -->
+
+			<field name="phone" type="text" label="TPL_PHONE" description="TPL_PHONE_DESC" size="40" filter="RAW"/>
+
+			<field name="mail" type="text" label="TPL_EMAIL" description="TPL_EMAIL_DESC" size="40" filter="RAW"/>
+
+			<field name="website" type="text" label="TPL_WEBSITE" description="TPL_WEBSITE_DESC" size="40" filter="RAW" hint="https://www.domain.com"/>
+
+			<field name="link-contact" type="text" label="TPL_CONTACT_US" description="TPL_CONTACT_US_DESC" size="40" filter="RAW"/>
+
+			<!-- LOCATION BUSINESS HOURS -->
+			<field name="spacer0" type="spacer" label="TPL_BUSINESS_HOURS_LABEL" class="text-label" />
+
+			<field name="offline" type="checkbox" label="TPL_BUSINESS_OFFLINE" description="Is the business closed down?" class="text-label" />
+			<field name="public-holiday" type="checkbox" label="TPL_CLOSED_PUBLIC_HOLIDAYS" description="TPL_CLOSED_PUBLIC_HOLIDAYS_DESCRIPTION" class="text-label" />
+
+			<field
+				name="business-hours"
+				type="subform"
+				label="TPL_BUSINESS_HOURS"
+				description="TPL_BUSINESS_HOURS_DESC"
+				layout="joomla.form.field.subform.repeatable"
+				icon="list"
+				multiple="false"
+				class="no-row"
+				>
+				<form hidden="true" name="buisness-hours-listing" repeat="true">
+					<field name="monday" type="text" label="TPL_BUSINESS_HOURS_DAY" description="TPL_BUSINESS_HOURS_DAY_DESCRIPTION" default="Monday" maxlength="20" size="12" readonly="true" />
+					<field name="mon_hours" type="text" label="TPL_BUSINESS_HOURS_DATA" description="TPL_BUSINESS_HOURS_DATA_DESCRIPTION" hint="09:00 - 17:00" maxlength="25" size="12" />
+					<field name="tuesday" type="text" label="TPL_BUSINESS_HOURS_DAY" description="TPL_BUSINESS_HOURS_DAY_DESCRIPTION" default="Tuesday"  maxlength="20" size="12" readonly="true" />
+					<field name="tue_hours" type="text" label="TPL_BUSINESS_HOURS_DATA" description="TPL_BUSINESS_HOURS_DATA_DESCRIPTION" hint="09:00 - 17:00"  maxlength="25" size="12" />
+					<field name="wednesday" type="text" label="TPL_BUSINESS_HOURS_DAY" description="TPL_BUSINESS_HOURS_DAY_DESCRIPTION" default="Wednesday"  maxlength="20" size="12" readonly="true" />
+					<field name="wed_hours" type="text" label="TPL_BUSINESS_HOURS_DATA" description="TPL_BUSINESS_HOURS_DATA_DESCRIPTION" hint="09:00 - 17:00"  maxlength="25" size="12" />
+					<field name="thursday" type="text" label="TPL_BUSINESS_HOURS_DAY" description="TPL_BUSINESS_HOURS_DAY_DESCRIPTION" default="Thursday"  maxlength="20" size="12" readonly="true" />
+					<field name="thu_hours" type="text" label="TPL_BUSINESS_HOURS_DATA" description="TPL_BUSINESS_HOURS_DATA_DESCRIPTION" hint="09:00 - 17:00"  maxlength="25" size="12" />
+					<field name="friday" type="text" label="TPL_BUSINESS_HOURS_DAY" description="TPL_BUSINESS_HOURS_DAY_DESCRIPTION" default="Friday" maxlength="20" size="12" readonly="true" />
+					<field name="fri_hours" type="text" label="TPL_BUSINESS_HOURS_DATA" description="TPL_BUSINESS_HOURS_DATA_DESCRIPTION" hint="09:00 - 17:00" maxlength="25" size="12" />
+					<field name="saturday" type="text" label="TPL_BUSINESS_HOURS_DAY" description="TPL_BUSINESS_HOURS_DAY_DESCRIPTION" default="Saturday" maxlength="20" size="12" readonly="true" />
+					<field name="sat_hours" type="text" label="TPL_BUSINESS_HOURS_DATA" description="TPL_BUSINESS_HOURS_DATA_DESCRIPTION" hint="09:00 - 17:00" maxlength="25" size="12" />
+					<field name="sunday" type="text" label="TPL_BUSINESS_HOURS_DAY" description="TPL_BUSINESS_HOURS_DAY_DESCRIPTION" default="Sunday" maxlength="20" size="12" readonly="true" />
+					<field name="sun_hours" type="text" label="TPL_BUSINESS_HOURS_DATA" description="TPL_BUSINESS_HOURS_DATA_DESCRIPTION" hint="Closed" maxlength="25" size="12" />
+				</form>
+			</field>
+
+			<!-- LOCATION GALLERY -->
+			<field name="spacer1" type="spacer" label="TPL_LISTING_GALLERY_LABEL" class="text-label" />
+
+			<field
+				name="listing-gallery"
+				type="subform"
+				label="TPL_LISTING_OPTIONS"
+				description="TPL_LISTING_OPTIONS_DESC"
+				layout="joomla.form.field.subform.repeatable-table"
+				icon="list"
+				multiple="true"
+				class="no-row"
+				>
+				<form hidden="true" name="list-info-listing" repeat="true">
+					<field
+					name="listing_img"
+					type="media"
+					label="TPL_LISTING_IMAGE_LABEL"
+					description="TPL_LISTING_IMAGE_DESC"
+					/>
+
+					<field
+						name="listing_alt"
+						type="text"
+						label="TPL_LISTING_IMAGE_ALT_LABEL"
+						description="TPL_LISTING_ALT_IMAGE_DESC"
+						/>				
+				</form>
+			</field>
+
+			<!-- LOCATION SOCIAL -->
+			<field name="spacer3" type="spacer" label="TPL_LISTING_SOCIAL_LABEL" class="text-label" />
+
+			<field
+				name="listing-social"
+				type="subform"
+				label="TPL_LISTING_OPTIONS"
+				description="TPL_LISTING_OPTIONS_DESC"
+				layout="joomla.form.field.subform.repeatable-table"
+				icon="list"
+				multiple="true"
+				class="no-row"
+				>
+				<form hidden="true" name="list-social-listing" repeat="true">
+					<field
+					name="social_font"
+					type="text"
+					label="TPL_LISTING_SOCIAL_FONT_ICON_LABEL"
+					description="TPL_LISTING_SOCIAL_FONT_ICON_DESC"
+					hint="facebook"
+					/>
+
+					<field
+						name="social_link"
+						type="text"
+						label="TPL_LISTING_SOCIAL_LINK_LABEL"
+						description="TPL_LISTING_SOCIAL_LINK_DESC"
+						hint="http://facebook.com/joomlart"
+						/>
+
+				</form>
+			</field>
+
+			<!-- LOCATION MENU -->
+			<field name="spacer4" type="spacer" label="TPL_LISTING_MENU_LABEL" class="text-label" />
+
+			<field name="menu-desc" type="textarea" label="TPL_LISTING_MENU_DESCRIPTIONS_LABEL" class="text-label" filter="raw" />
+
+			<field
+				name="listing-menu"
+				type="subform"
+				label="TPL_LISTING_OPTIONS"
+				description="TPL_LISTING_OPTIONS_DESC"
+				layout="joomla.form.field.subform.repeatable-table"
+				icon="list"
+				multiple="true"
+				class="no-row"
+				>
+				<form hidden="true" name="list-menu-listing" repeat="true">
+					<field
+					name="menu_image"
+					type="media"
+					label="TPL_LISTING_MENU_IMAGE_LABEL"
+					description="TPL_LISTING_MENU_IMAGE_DESC"
+					hint="facebook"
+					/>
+
+					<field
+					name="menu_title"
+					type="text"
+					label="TPL_LISTING_MENU_TITLE_LABEL"
+					description="TPL_LISTING_MENU_TITLE_DESC"
+					hint="Beef cheek"
+					/>
+
+					<field
+					name="menu_desc"
+					type="text"
+					label="TPL_LISTING_MENU_DESC_LABEL"
+					description="TPL_LISTING_MENU_DESC_DESC"
+					hint="w/ brioche, hazelnuts, black vinegar laver"
+					/>
+
+					<field
+					name="menu_type"
+					type="list"
+					label="TPL_LISTING_MENU_TYPE_LABEL"
+					description="TPL_LISTING_MENU_TYPE_DESC"
+					multiple="true"
+					>
+					<option value=""></option>
+					<option value="Vegetarian">Vegetarian</option>
+					<option value="Vegan">Vegan</option>
+					<option value="Gluten Free">Gluten Free</option>
+					<option value="Halal">Halal</option>
+					<option value="Kosher">Kosher</option>
+					<option value="Organic">Organic</option>
+					</field>
+
+					<field
+					name="menu_price"
+					type="text"
+					label="TPL_LISTING_MENU_PRICE_LABEL"
+					description="TPL_LISTING_MENU_PRICE_DESC"
+					hint="Price of item"
+					maxlength="8"
+					size="10"
+					/>
+				</form>
+			</field>
+
+			<!-- LOCATION FAQ -->
+			<field name="spacer4" type="spacer" label="TPL_FAQ_LABEL" class="text-label" />
+
+			<field name="faq-title" type="textarea" label="TPL_LISTING_MENU_DESCRIPTIONS_LABEL" class="text-label" filter="raw" />
+
+			<field
+				name="listing-faq"
+				type="subform"
+				label="TPL_LISTING_OPTIONS"
+				description="TPL_LISTING_OPTIONS_DESC"
+				layout="joomla.form.field.subform.repeatable-table"
+				icon="list"
+				multiple="true"
+				class="no-row"
+				>
+				<form hidden="true" name="list-faq-listing" repeat="true">
+					<field
+					name="faq_title"
+					type="text"
+					label="TPL_LISTING_FAQ_TITLE_LABEL"
+					description="TPL_LISTING_FAQ_TITLE_DESC"
+					/>
+
+					<field
+					name="faq_content"
+					type="text"
+					label="TPL_LISTING_FAQ_CONTENT_LABEL"
+					description="TPL_LISTING_FAQ_CONTENT_DESC"
+					/>
+				</form>
+			</field>
+		</fieldset>
+	</fields>
+</form>
