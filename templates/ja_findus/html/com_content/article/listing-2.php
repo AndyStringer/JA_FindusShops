@@ -121,11 +121,12 @@ $uri = JUri::getInstance();
 			<div class="row">
 				<div class="col-lg-4 order-lg-2 mb-3">
 					<div class="listing-sidebar">
-						<?php if (!empty($ltLocation)): ?>
+<!--						<?php if (!empty($ltLocation)): ?>
 							<div class="listing-map">
 	            	{jamap locations='{"location":{"0":"<?php echo $this->item->title; ?>"},"latitude":{"0":"<?php echo $ltLocation[0]; ?>"},"longitude":{"0":"<?php echo $ltLocation[1]; ?>"},"info":{"0":"<?php echo $this->item->title; ?>"},"icon":{"0":""}}' zoom='15' map_width='700' map_height='500'}{/jamap}
 	            </div>
 						<?php endif; ?>
+-->
 
 		                                <?php
 							$busStatus = empty($ltBusOffline) || $ltBusOffline == 0;
@@ -251,6 +252,11 @@ $uri = JUri::getInstance();
 										</a>
 									</div>
 								<?php endif ;?>
+                                                                <?php if (!empty($ltLocation)): ?>
+                                                                        <div class="listing-map-bottom">
+																			{jamap locations='{"location":{"0":"<?php echo str_replace("'", "", $this->item->title); ?>"},"latitude":{"0":"<?php echo $ltLocation[0]; ?>"},"longitude":{"0":"<?php echo $ltLocation[1]; ?>"},"info":{"0":"<?php echo str_replace("'", "", $this->item->title); ?>"},"icon":{"0":""}}' zoom='15' map_width='700' map_height='400'}{/jamap}
+                                                                        </div>
+                                                                <?php endif; ?>
 							</div>
 						</div>
 						<?php endif ;?>

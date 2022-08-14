@@ -268,23 +268,16 @@ $uri = JUri::getInstance();
 	</div>
 	<!-- // GALLERY -->
 	<?php endif ;?>
-	
 	<div class="listing-info-detail-wrap">
 		<div class="row">
 			<div class="col-lg-4 order-lg-2 mb-3">
 				<div class="listing-sidebar">
+<!--	
 					<?php if (!empty($ltLocation)): ?>
 						<div class="listing-map">
             	{jamap locations='{"location":{"0":"<?php echo $this->item->title; ?>"},"latitude":{"0":"<?php echo $ltLocation[0]; ?>"},"longitude":{"0":"<?php echo $ltLocation[1]; ?>"},"info":{"0":"<?php echo $this->item->title; ?>"},"icon":{"0":""}}' zoom='15' map_width='700' map_height='500'}{/jamap}
             </div>
 					<?php endif; ?>
-<!--
-<?php
-	$x=JATemplateHelper::getPublicHolidays();
-	foreach ($x as $y) {
-		echo "| ".$y." | ";
-	}
-?>
 -->
                                         <?php
                                                 $busStatus = empty($ltBusOffline) || $ltBusOffline == 0;
@@ -351,9 +344,8 @@ $uri = JUri::getInstance();
                                                                                          <span><?php echo $value->mon_hours;?></span><br/>
                                                                                  <?php endforeach ;?>
 -->
-										</span>
                                                                 </li>
-                                                         <?php endif ;?>
+                                                       <?php endif ;?>
 
                                                        <?php if($ltAddress) :?>
                                                                 <li>
@@ -401,27 +393,32 @@ $uri = JUri::getInstance();
 					</div>
 
 					<?php if($ltPhone) :?>
-					<div class="contact-actions">
-						<div class="row">
-							<?php if($ltPhone) :?>
-								<div class="col-12 col-sm-6 mb-2 mb-sm-0">
-									<a class="btn btn-primary d-block" href="tel:<?php echo $ltPhone ;?>" title="<?php echo $ltPhone ;?>">
-										<?php echo Text::_('TPL_CALL_US') ;?>
-									</a>
-								</div>
-							<?php endif ;?>
+						<div class="contact-actions">
+							<div class="row">
+								<?php if($ltPhone) :?>
+									<div class="col-12 col-sm-6 mb-2 mb-sm-0">
+										<a class="btn btn-primary d-block" href="tel:<?php echo $ltPhone ;?>" title="<?php echo $ltPhone ;?>">
+											<?php echo Text::_('TPL_CALL_US') ;?>
+										</a>
+									</div>
+								<?php endif ;?>
 
-							<?php if($ltContact) :?>
-								<div class="col-12 col-sm-6">
-									<a class="btn btn-default d-block" href="tel:<?php echo $ltContact ;?>" title="<?php echo Text::_('TPL_SEND_MESSAGE') ;?>">
-										<?php echo Text::_('TPL_SEND_MESSAGE') ;?>
-									</a>
-								</div>
-							<?php endif ;?>
+								<?php if($ltContact) :?>
+									<div class="col-12 col-sm-6">
+										<a class="btn btn-default d-block" href="tel:<?php echo $ltContact ;?>" title="<?php echo Text::_('TPL_SEND_MESSAGE') ;?>">
+											<?php echo Text::_('TPL_SEND_MESSAGE') ;?>
+										</a>
+									</div>
+								<?php endif ;?>
+			                    <?php if (!empty($ltLocation)): ?>
+									<div class="listing-map-bottom">
+                                        {jamap locations='{"location":{"0":"<?php echo str_replace("'", "", $this->item->title); ?>"},"latitude":{"0":"<?php echo $ltLocation[0]; ?>"},"longitude":{"0":"<?php echo $ltLocation[1]; ?>"},"info":{"0":"<?php echo str_replace("'", "", $this->item->title); ?>"},"icon":{"0":""}}' zoom='15' map_width='700' map_height='400'}{/jamap}
+			                        </div>
+                        		<?php endif; ?>
+							</div>
 						</div>
-					</div>
 					<?php endif ;?>
-				</div>
+					</div>
 				</div>
 			</div>
 
